@@ -21,7 +21,7 @@
     "url": "https://github.com/carlosign/vue-leaflet-print/issues"
   },
   "homepage": "https://github.com/carlosign/vue-leaflet-print#readme",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "main": "./index.umd.js",
   "module": "./index.es.js",
@@ -33,10 +33,13 @@
     },
     "./package.json": "./package.json"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
-    "vue": "^3.4.0",
+    "@vue-leaflet/vue-leaflet": "^0.10.0",
     "leaflet": "^1.9.0",
-    "@vue-leaflet/vue-leaflet": "^0.10.0"
+    "vue": "^3.4.0"
   },
   "dependencies": {
     "html-to-image": "^1.11.11",
