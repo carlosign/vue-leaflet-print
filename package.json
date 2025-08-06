@@ -7,7 +7,7 @@
     "playground"
   ],
   "scripts": {
-    "build": "pnpm -r --filter @carlosign/vue-leaflet-print build",
+    "build": "pnpm -r --filter @carloschar/vue-leaflet-print build",
     "dev": "pnpm -C playground dev",
     "test": "pnpm -r test --if-present",
     "release": "pnpm -C packages/core release",
