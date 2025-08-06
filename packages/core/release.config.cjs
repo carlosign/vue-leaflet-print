@@ -7,7 +7,6 @@ module.exports = {
       '@semantic-release/release-notes-generator',
       {
         preset: 'conventionalcommits',
-        // Fix: si un commit no trae fecha válida, ponemos una ISO
         writerOpts: {
           transform: (commit) => {
             try {
@@ -22,10 +21,14 @@ module.exports = {
       },
     ],
     '@semantic-release/changelog',
-    // ⬇️ Publicamos el paquete DESDE dist
-    ['@semantic-release/npm', { npmPublish: true, pkgRoot: 'dist' }],
+    // ✅ Solo PREPARE (escribe versión en dist), NO publica
+    ['@semantic-release/npm', { npmPublish: false, pkgRoot: 'dist' }],
     ['@semantic-release/git', { assets: ['CHANGELOG.md', 'dist/**'] }],
-    // Evitamos issues automáticos si falla
+    // ✅ Publicamos nosotros explícitamente desde dist
+    ['@semantic-release/exec', {
+      // corre después de prepare: dist/package.json ya tiene la versión nueva
+      publishCmd: 'npm publish ./dist --access public'
+    }],
     ['@semantic-release/github', { failComment: false, labels: false }],
   ],
 }

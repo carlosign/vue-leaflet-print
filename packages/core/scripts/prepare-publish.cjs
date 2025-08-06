@@ -37,26 +37,21 @@ const out = {
   repository,
   bugs,
   homepage,
-  // semantic-release pondrá la version aquí
-  version: '0.0.0-development',
+  version: '0.0.0-development',        // ← placeholder (semantic-release lo pisa)
   type: 'module',
   main: './index.umd.js',
   module: './index.es.js',
   types: './index.d.ts',
   exports: {
-    '.': {
-      import: './index.es.js',
-      require: './index.umd.js',
-    },
+    '.': { import: './index.es.js', require: './index.umd.js' },
     './package.json': './package.json',
   },
-  // Mantener peer deps (no generan error y son útiles para consumidores)
+  publishConfig: { access: 'public' },  // ← importante para scoped
   peerDependencies: srcPkg.peerDependencies || {},
-  // Dependencias runtime reales (si las hubiera)
   dependencies: srcPkg.dependencies || {},
-  // Side effects (si tu CSS debe conservarse)
   sideEffects: ['./style.css'],
 }
+
 
 // Escribimos package.json en dist
 fs.writeFileSync(distPkgPath, JSON.stringify(out, null, 2))
