@@ -12,11 +12,17 @@
       "require": "./dist/index.umd.js"
     }
   },
-  "files": ["dist", "README.md"],
-  "sideEffects": ["./dist/style.css","./src/styles.css"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": [
+    "./dist/style.css",
+    "./src/styles.css"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/carlosign/vue-leaflet-print.git",
+    "url": "git+https://github.com/carlosign/vue-leaflet-print.git",
     "directory": "packages/core"
   },
   "homepage": "https://github.com/carlosign/vue-leaflet-print#readme",
@@ -54,7 +60,15 @@
     "test": "vitest run",
     "release": "semantic-release"
   },
-  "keywords": ["leaflet","vue","vue-leaflet","print","export","map","png"],
+  "keywords": [
+    "leaflet",
+    "vue",
+    "vue-leaflet",
+    "print",
+    "export",
+    "map",
+    "png"
+  ],
   "author": "Carlos Ignacio Charletti",
   "license": "MIT"
 }
