@@ -57,7 +57,7 @@
   },
   "scripts": {
     "build": "vite build -c vite.config.ts",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "release": "semantic-release"
   },
   "keywords": [
