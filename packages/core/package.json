@@ -1,19 +1,28 @@
 {
-  "name": "@cchar/vue-leaflet-print",
+  "name": "@carlosign/vue-leaflet-print",
   "version": "0.2.0",
-  "description": "Control de impresión/exportación para Vue-Leaflet (VUE3) con estrategias intercambiables",
+  "description": "Control de impresión/exportación para Vue-Leaflet (Vue 3): print nativo, PNG via html-to-image y PNG via leaflet-image.",
   "type": "module",
-  "main": "./dist/index.umd.cjs",
+  "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.cjs"
+      "require": "./dist/index.umd.js"
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
   "sideEffects": ["./dist/style.css","./src/styles.css"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carlosign/vue-leaflet-print.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/carlosign/vue-leaflet-print#readme",
+  "bugs": {
+    "url": "https://github.com/carlosign/vue-leaflet-print/issues"
+  },
   "peerDependencies": {
     "vue": "^3.4.0",
     "leaflet": "^1.9.0",
@@ -46,6 +55,6 @@
     "release": "semantic-release"
   },
   "keywords": ["leaflet","vue","vue-leaflet","print","export","map","png"],
-  "author": "Carlos Charletti",
+  "author": "Carlos Ignacio Charletti",
   "license": "MIT"
 }

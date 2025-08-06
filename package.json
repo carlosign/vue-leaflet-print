@@ -1,13 +1,17 @@
 {
-  "name": "vue-leaflet-print",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "vue-leaflet-print-monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.14.0",
+  "workspaces": [
+    "packages/*",
+    "playground"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pnpm -r --filter @carlosign/vue-leaflet-print build",
+    "dev": "pnpm -C playground dev",
+    "test": "pnpm -r test --if-present",
+    "release": "pnpm -C packages/core release",
+    "lint": "echo \"(opcional) agrega eslint aquí\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.14.0"
+  "license": "MIT"
 }
