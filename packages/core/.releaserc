@@ -1,0 +1,11 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    ["@semantic-release/release-notes-generator", { "preset": "conventionalcommits" }],
+    "@semantic-release/changelog",
+    ["@semantic-release/npm", { "npmPublish": true }],
+    ["@semantic-release/git", { "assets": ["CHANGELOG.md", "dist/**"] }],
+    "@semantic-release/github"
+  ]
+}
