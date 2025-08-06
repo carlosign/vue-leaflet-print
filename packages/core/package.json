@@ -1,5 +1,5 @@
 {
-  "name": "@carlosign/vue-leaflet-print",
+  "name": "@carloschar/vue-leaflet-print",
   "version": "0.2.0",
   "description": "Control de impresión/exportación para Vue-Leaflet (Vue 3): print nativo, PNG via html-to-image y PNG via leaflet-image.",
   "type": "module",
