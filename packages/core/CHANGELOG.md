@@ -1,3 +1,8 @@
+## <small>1.0.1 (2025-08-06)</small>
+
+* Merge branch 'main' of https://github.com/carlosign/vue-leaflet-print ([119ff902fe79c64df7b8b29a59d37207825daa48](https://github.com/carlosign/vue-leaflet-print/commit/119ff902fe79c64df7b8b29a59d37207825daa48))
+* fix(release): ensure dist version placeholder and npm auth; retry publish ([32a37a99cd65a39a750c6af16bffa06f29f5b980](https://github.com/carlosign/vue-leaflet-print/commit/32a37a99cd65a39a750c6af16bffa06f29f5b980))
+
 ## 1.0.0 (2025-08-06)
 
 * Configuracion del repo ([9c7e342cf7c6af3db1149a4a5b4c831682ec541a](https://github.com/carlosign/vue-leaflet-print/commit/9c7e342cf7c6af3db1149a4a5b4c831682ec541a))
