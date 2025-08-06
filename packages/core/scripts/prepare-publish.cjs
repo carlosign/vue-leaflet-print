@@ -38,6 +38,7 @@ const out = {
   bugs,
   homepage,
   // semantic-release pondrá la version aquí
+  version: '0.0.0-development',
   type: 'module',
   main: './index.umd.js',
   module: './index.es.js',
