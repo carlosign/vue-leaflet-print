@@ -71,7 +71,7 @@ importers:
 
   playground:
     dependencies:
-      '@cchar/vue-leaflet-print':
+      '@carloschar/vue-leaflet-print':
         specifier: workspace:^
         version: link:../packages/core
       '@vue-leaflet/vue-leaflet':
