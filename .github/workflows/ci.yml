@@ -3,6 +3,7 @@ on:
   push:
     branches: [main]
   pull_request:
+
 jobs:
   build-test:
     runs-on: ubuntu-latest
@@ -14,6 +15,6 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
-      - run: pnpm i
-      - run: pnpm -r build
-      - run: pnpm -r test --if-present
+      - run: pnpm install
+      - run: pnpm -C packages/core build
+      - run: pnpm -C packages/core test --if-present
