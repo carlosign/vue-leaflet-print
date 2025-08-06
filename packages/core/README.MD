@@ -1,10 +1,10 @@
-# @cchar/vue-leaflet-print
+# @carloschar/vue-leaflet-print
 
 Control de **impresión/exportación** para **Leaflet** en **Vue 3** (Vue-Leaflet).  
 Incluye 3 modos: **print nativo**, **PNG por html-to-image**, **PNG por leaflet-image**.
 Asimismo, el botón es personalizable con html (se puede usar fontawesome por ejemplo).
 
-[![npm version](https://img.shields.io/npm/v/@cchar/vue-leaflet-print.svg)](https://www.npmjs.com/package/@cchar/vue-leaflet-print)
+[![npm version](https://img.shields.io/npm/v/@carloschar/vue-leaflet-print.svg)](https://www.npmjs.com/package/@carloschar/vue-leaflet-print)
 [![CI](https://github.com/carlosign/vue-leaflet-print/actions/workflows/ci.yml/badge.svg)](https://github.com/carlosign/vue-leaflet-print/actions/workflows/ci.yml)
 
 ## Instalación
