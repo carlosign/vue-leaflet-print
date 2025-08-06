@@ -21,7 +21,7 @@
 import { ref } from 'vue'
 import 'leaflet/dist/leaflet.css'
 import { LMap, LTileLayer, LControl } from '@vue-leaflet/vue-leaflet'
-import { LPrintControl } from '@cchar/vue-leaflet-print'
+import { LPrintControl } from '@carloschar/vue-leaflet-print'
 
 
 const instanciaMapa = ref<any>(null);
