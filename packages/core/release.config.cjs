@@ -16,7 +16,21 @@ module.exports = {
         }
       }
     ],
-    '@semantic-release/release-notes-generator',
+    [
+  '@semantic-release/release-notes-generator',
+  {
+    // Usamos el mismo preset “angular” (o el que sigas en tus commits)
+    preset: 'angular',
+    // (Opcional) Repite parserOpts si tu convención de cabeceras difiere
+    parserOpts: {
+      headerPattern: /^(\w*)(?:\((.*)\))?!?: (.*)$/,
+      headerCorrespondence: ['type', 'scope', 'subject'],
+      noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
+    }
+    // (Opcional) writerOpts para personalizar salida
+    // writerOpts: { commitsSort: ['scope', 'subject'] }
+  }
+],
     '@semantic-release/changelog',
     [
       '@semantic-release/npm',
