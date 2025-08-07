@@ -37,7 +37,7 @@ const out = {
   repository,
   bugs,
   homepage,
-  version: '0.0.0-development',        // ← placeholder (semantic-release lo pisa)
+  version: '0.0.0-development', // placeholder
   type: 'module',
   main: './index.umd.js',
   module: './index.es.js',
@@ -46,11 +46,20 @@ const out = {
     '.': { import: './index.es.js', require: './index.umd.js' },
     './package.json': './package.json',
   },
-  publishConfig: { access: 'public' },  // ← importante para scoped
+  publishConfig: { access: 'public' },
   peerDependencies: srcPkg.peerDependencies || {},
   dependencies: srcPkg.dependencies || {},
   sideEffects: ['./style.css'],
-}
+  // ↓ Esto es lo crítico: solo estos archivos entrarán en el paquete npm
+  files: [
+    'index.umd.js',
+    'index.es.js',
+    'index.d.ts',
+    'style.css',
+    'README.md',
+    'LICENSE'
+  ]
+};
 
 
 // Escribimos package.json en dist
