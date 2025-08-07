@@ -36,7 +36,8 @@ module.exports = {
       '@semantic-release/npm',
       {
 
-        npmPublish: true
+        npmPublish: true,
+        npmClient: 'pnpm'
       }
     ],
     [
