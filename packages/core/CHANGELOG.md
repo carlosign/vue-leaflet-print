@@ -1,3 +1,7 @@
+## <small>1.0.2 (2025-08-07)</small>
+
+* fix(release): fix ([888572eadffbe4a53b69da35bf6f4aa0122fbc1d](https://github.com/carlosign/vue-leaflet-print/commit/888572eadffbe4a53b69da35bf6f4aa0122fbc1d))
+
 ## <small>1.0.7 (2025-08-07)</small>
 
 * fix(core): trigger release after config cleanup ([f8e73591f8635dd41fa7e5d04919606190459cdd](https://github.com/carlosign/vue-leaflet-print/commit/f8e73591f8635dd41fa7e5d04919606190459cdd))
