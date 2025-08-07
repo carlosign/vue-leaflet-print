@@ -2,7 +2,20 @@
 module.exports = {
   branches: ['main'],
   plugins: [
-    '@semantic-release/commit-analyzer',
+    [
+      '@semantic-release/commit-analyzer',
+      {
+        // Puedes usar 'angular', 'conventionalcommits', etc.
+        // El preset 'angular' es el más común:
+        preset: 'angular',
+        // Opcional: ajusta parserOpts si usas un formato distinto:
+        parserOpts: {
+          headerPattern: /^(\w*)(?:\((.*)\))?!?: (.*)$/,
+          headerCorrespondence: ['type', 'scope', 'subject'],
+          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES']
+        }
+      }
+    ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
     [
