@@ -57,8 +57,7 @@
     "vue": "^3.4.0"
   },
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm run clean && vite build -c vite.config.ts",
+    "build": "vite build -c vite.config.ts",
     "test": "vitest run --passWithNoTests",
     "release": "semantic-release --config ./release.config.cjs"
   },
