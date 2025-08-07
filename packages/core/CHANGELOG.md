@@ -1,3 +1,8 @@
+## <small>1.0.3 (2025-08-07)</small>
+
+* Merge branch 'main' of https://github.com/carlosign/vue-leaflet-print ([29082dc4895fe51992e96bc0987516946f6759d8](https://github.com/carlosign/vue-leaflet-print/commit/29082dc4895fe51992e96bc0987516946f6759d8))
+* fix(release): publish from dist by cd into folder ([b2269f7b4c18206e26dc30c3207d16087ad44b4b](https://github.com/carlosign/vue-leaflet-print/commit/b2269f7b4c18206e26dc30c3207d16087ad44b4b))
+
 ## <small>1.0.2 (2025-08-06)</small>
 
 * fix(release): add @semantic-release/exec plugin ([323e08b5ddab3af4fe7c89022d44478364d03a7c](https://github.com/carlosign/vue-leaflet-print/commit/323e08b5ddab3af4fe7c89022d44478364d03a7c))
