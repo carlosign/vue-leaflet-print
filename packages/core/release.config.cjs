@@ -36,9 +36,7 @@ module.exports = {
       '@semantic-release/npm',
       {
         pkgRoot: 'dist',
-        npmPublish: true,
-        // Forzamos el publish desde dist y public access:
-        publishCmd: 'npm publish . --access public --tag ${npmTag}'
+        npmPublish: true
       }
     ],
     [
