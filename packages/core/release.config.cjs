@@ -1,43 +1,28 @@
 // packages/core/release.config.cjs
-const coerceIso = (v) => {
-  const d = v ? new Date(v) : null;
-  return d && !Number.isNaN(d.getTime()) ? d.toISOString() : new Date().toISOString();
-};
-
 module.exports = {
   branches: ['main'],
   plugins: [
-    ['@semantic-release/commit-analyzer', { preset: 'conventionalcommits' }],
+    '@semantic-release/commit-analyzer',               // analiza tus Conventional Commits
+    '@semantic-release/release-notes-generator',       // genera notas de reléase
+    '@semantic-release/changelog',                     // actualiza CHANGELOG.md
     [
-      '@semantic-release/release-notes-generator',
+      '@semantic-release/npm',
       {
-        preset: 'conventionalcommits',
-        writerOpts: {
-          transform(commit) {
-            // Normaliza fechas de cualquier origen
-            const candidates = [
-              commit.committerDate,
-              commit.authorDate,
-              commit.commit && commit.commit.committerDate,
-              commit.commit && commit.commit.authorDate,
-            ];
-            commit.committerDate = coerceIso(candidates.find(Boolean));
-            commit.authorDate = coerceIso(commit.authorDate);
-            return commit;
-          },
-        },
-      },
+        npmPublish: true,      // publica desde la raíz de core
+        tarballDir: '.',       // opcional: guarda el tarball localmente
+      }
     ],
-    '@semantic-release/changelog',
-    ['@semantic-release/npm', { pkgRoot: 'dist', npmPublish: true,  publishCmd: 'npm publish dist --access public --tag ${npmTag}' }],
     [
       '@semantic-release/git',
       {
-        assets: ['CHANGELOG.md', 'dist/package.json'],
+        assets: [
+          'CHANGELOG.md',
+          'package.json'
+        ],
         message:
-          'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
-      },
+          'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
+      }
     ],
-    '@semantic-release/github',
-  ],
+    '@semantic-release/github'                         // crea la Release en GitHub
+  ]
 };
