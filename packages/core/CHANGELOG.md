@@ -1,3 +1,10 @@
+## <small>1.0.7 (2025-08-07)</small>
+
+* fix(core): trigger release after config cleanup ([f8e73591f8635dd41fa7e5d04919606190459cdd](https://github.com/carlosign/vue-leaflet-print/commit/f8e73591f8635dd41fa7e5d04919606190459cdd))
+* fix(core): trigger release after config cleanup ([52ce820a6d299bc54c6b85ebfe7fb7795d2a5de7](https://github.com/carlosign/vue-leaflet-print/commit/52ce820a6d299bc54c6b85ebfe7fb7795d2a5de7))
+* fix(core): trigger release after config cleanup ([b480c2f4a4de2cb195dd47f124d1f32e4675c7f7](https://github.com/carlosign/vue-leaflet-print/commit/b480c2f4a4de2cb195dd47f124d1f32e4675c7f7))
+* Merge branch 'main' of https://github.com/carlosign/vue-leaflet-print ([3ad5239599dc81453c8b040f0efd673c69017bd4](https://github.com/carlosign/vue-leaflet-print/commit/3ad5239599dc81453c8b040f0efd673c69017bd4))
+
 ## <small>1.0.6 (2025-08-07)</small>
 
 * fix(core): normalize commit dates to avoid changelog crash ([5a17d6b55732ac4c075423a0a9733cd0bb18aaff](https://github.com/carlosign/vue-leaflet-print/commit/5a17d6b55732ac4c075423a0a9733cd0bb18aaff))
