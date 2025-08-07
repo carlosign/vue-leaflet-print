@@ -13,5 +13,6 @@
     "release": "pnpm -C packages/core release",
     "lint": "echo \"(opcional) agrega eslint aquí\""
   },
-  "license": "MIT"
+  "license": "MIT",
+  "version": "1.0.1"
 }
