@@ -15,7 +15,7 @@ if (!fs.existsSync(distDir)) {
 
 const srcPkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
 
-// Campos a limpiar para el paquete publicado
+// Campos a limpiar para el paquete publicado //
 const {
   name,
   description,
