@@ -1,3 +1,16 @@
+## <small>1.0.6 (2025-08-07)</small>
+
+* fix(core): normalize commit dates to avoid changelog crash ([5a17d6b55732ac4c075423a0a9733cd0bb18aaff](https://github.com/carlosign/vue-leaflet-print/commit/5a17d6b55732ac4c075423a0a9733cd0bb18aaff))
+* fix(core): release ([c2f5a4f51ae58971f30616d741f2d64ede20a888](https://github.com/carlosign/vue-leaflet-print/commit/c2f5a4f51ae58971f30616d741f2d64ede20a888))
+* fix(core): trigger release after config cleanup ([1e71544684e2b08d3173decfe242d561d55c20d6](https://github.com/carlosign/vue-leaflet-print/commit/1e71544684e2b08d3173decfe242d561d55c20d6))
+* fix(core): trigger release after config cleanup ([85f79ca5d270e4d6009fc1a64d7bc836a4c7302a](https://github.com/carlosign/vue-leaflet-print/commit/85f79ca5d270e4d6009fc1a64d7bc836a4c7302a))
+* fix(core): trigger release after config fix ([6ce28a9cc9ab09b9ab5714822a2c770d4535b2ea](https://github.com/carlosign/vue-leaflet-print/commit/6ce28a9cc9ab09b9ab5714822a2c770d4535b2ea))
+* fix(core): trigger release after config fix ([81dee931439f51c4b05689afd4bc5890ad6f7093](https://github.com/carlosign/vue-leaflet-print/commit/81dee931439f51c4b05689afd4bc5890ad6f7093))
+* fix(release): publish desde dist y raiz privada ([287d8fe3e335034571e75ee892e0211283ec83f0](https://github.com/carlosign/vue-leaflet-print/commit/287d8fe3e335034571e75ee892e0211283ec83f0))
+* Merge branch 'main' of https://github.com/carlosign/vue-leaflet-print ([335a98c43fb7943d27a908de348df6686647fec0](https://github.com/carlosign/vue-leaflet-print/commit/335a98c43fb7943d27a908de348df6686647fec0))
+* Merge branch 'main' of https://github.com/carlosign/vue-leaflet-print ([3d8d655d9f3a1a0ce27d905b162c6678d5194a45](https://github.com/carlosign/vue-leaflet-print/commit/3d8d655d9f3a1a0ce27d905b162c6678d5194a45))
+* Update release.yml ([13ea01711d4855f48e1406e593702e3b70e2e7df](https://github.com/carlosign/vue-leaflet-print/commit/13ea01711d4855f48e1406e593702e3b70e2e7df))
+
 ## <small>1.0.3 (2025-08-07)</small>
 
 * Merge branch 'main' of https://github.com/carlosign/vue-leaflet-print ([29082dc4895fe51992e96bc0987516946f6759d8](https://github.com/carlosign/vue-leaflet-print/commit/29082dc4895fe51992e96bc0987516946f6759d8))
