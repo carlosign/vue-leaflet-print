@@ -37,7 +37,6 @@ const out = {
   repository,
   bugs,
   homepage,
-  version: '0.0.0-development', // placeholder
   type: 'module',
   main: './index.umd.js',
   module: './index.es.js',
