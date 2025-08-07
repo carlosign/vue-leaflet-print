@@ -38,7 +38,7 @@ module.exports = {
         pkgRoot: 'dist',
         npmPublish: true,
         // Forzamos el publish desde dist y public access:
-        publishCmd: 'cd dist && npm publish --access public --tag ${npmTag}'
+        publishCmd: 'npm publish . --access public --tag ${npmTag}'
       }
     ],
     [
