@@ -1,3 +1,12 @@
+## [1.0.8](https://github.com/carlosign/vue-leaflet-print/compare/v1.0.7...v1.0.8) (2025-08-07)
+
+
+### Bug Fixes
+
+* **release:** fix ([a817279](https://github.com/carlosign/vue-leaflet-print/commit/a8172795d9e9cdd89abbc41210dd0c04a67c50eb))
+* **release:** fix ([da3d498](https://github.com/carlosign/vue-leaflet-print/commit/da3d498b21fe0dfe50572dcf91266aeb8f49c7bc))
+* **release:** fix ([77cde09](https://github.com/carlosign/vue-leaflet-print/commit/77cde09d10df82895c8b60b1c8a72cb0ce58e646))
+
 ## [1.0.7](https://github.com/carlosign/vue-leaflet-print/compare/v1.0.6...v1.0.7) (2025-08-07)
 
 
