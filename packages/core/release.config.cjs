@@ -14,7 +14,7 @@ module.exports = {
         preset: 'conventionalcommits',
         writerOpts: {
           transform(commit) {
-            // Normaliza fechas chotas de cualquier origen
+            // Normaliza fechas de cualquier origen
             const candidates = [
               commit.committerDate,
               commit.authorDate,
@@ -29,7 +29,7 @@ module.exports = {
       },
     ],
     '@semantic-release/changelog',
-    ['@semantic-release/npm', { pkgRoot: 'dist', npmPublish: true }],
+    ['@semantic-release/npm', { pkgRoot: 'dist', npmPublish: true,  publishCmd: 'npm publish dist --access public --tag ${npmTag}' }],
     [
       '@semantic-release/git',
       {
