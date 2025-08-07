@@ -2,6 +2,7 @@
   "name": "@carloschar/vue-leaflet-print",
   "version": "0.0.0-semantic-release",
   "publishConfig": { "access": "public" },
+  "private": true,
   "description": "Control de impresión/exportación para Vue-Leaflet (Vue 3): print nativo, PNG via html-to-image y PNG via leaflet-image.",
   "type": "module",
   "main": "./dist/index.umd.js",
@@ -13,10 +14,6 @@
       "require": "./dist/index.umd.js"
     }
   },
-  "files": [
-    "dist",
-    "README.md"
-  ],
   "sideEffects": [
     "./dist/style.css",
     "./src/styles.css"
