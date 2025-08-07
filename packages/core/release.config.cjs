@@ -27,7 +27,7 @@ module.exports = {
     // ✅ Publicamos nosotros explícitamente desde dist
     ['@semantic-release/exec', {
       // corre después de prepare: dist/package.json ya tiene la versión nueva
-      publishCmd: 'npm publish ./dist --access public'
+       publishCmd: 'bash -lc "cd dist && npm publish --access public"'
     }],
     ['@semantic-release/github', { failComment: false, labels: false }],
   ],
