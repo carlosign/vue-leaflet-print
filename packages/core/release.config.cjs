@@ -2,27 +2,26 @@
 module.exports = {
   branches: ['main'],
   plugins: [
-    '@semantic-release/commit-analyzer',               // analiza tus Conventional Commits
-    '@semantic-release/release-notes-generator',       // genera notas de reléase
-    '@semantic-release/changelog',                     // actualiza CHANGELOG.md
+    '@semantic-release/commit-analyzer',
+    '@semantic-release/release-notes-generator',
+    '@semantic-release/changelog',
     [
       '@semantic-release/npm',
       {
-        npmPublish: true,      // publica desde la raíz de core
-        tarballDir: '.',       // opcional: guarda el tarball localmente
+        pkgRoot: 'dist',
+        npmPublish: true,
+        // Forzamos el publish desde dist y public access:
+        publishCmd: 'npm publish dist --access public --tag ${npmTag}'
       }
     ],
     [
       '@semantic-release/git',
       {
-        assets: [
-          'CHANGELOG.md',
-          'package.json'
-        ],
+        assets: ['CHANGELOG.md', 'dist/package.json', 'dist/README.MD', 'dist/LICENSE'],
         message:
-          'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
-      }
+          'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+      },
     ],
-    '@semantic-release/github'                         // crea la Release en GitHub
-  ]
+    '@semantic-release/github',
+  ],
 };
