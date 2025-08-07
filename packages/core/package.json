@@ -35,7 +35,8 @@
   },
   "dependencies": {
     "html-to-image": "^1.11.11",
-    "leaflet-image": "^0.2.0"
+    "leaflet-image": "^0.2.0",
+    "rimraf": "^6.0.1"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
