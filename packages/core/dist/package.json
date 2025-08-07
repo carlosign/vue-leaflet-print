@@ -21,7 +21,7 @@
     "url": "https://github.com/carlosign/vue-leaflet-print/issues"
   },
   "homepage": "https://github.com/carlosign/vue-leaflet-print#readme",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "main": "./index.umd.js",
   "module": "./index.es.js",
