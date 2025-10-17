@@ -38,6 +38,8 @@ const isProcessing = ref(false)
 
 let control: L.Control | null = null
 let buttonEl: HTMLButtonElement | null = null
+let keydownHandler: ((e: KeyboardEvent) => void) | null = null
+let currentMap: L.Map | null = null
 
 function createControl(): L.Control {
   const Print = L.Control.extend({
@@ -71,13 +73,14 @@ function createControl(): L.Control {
       L.DomEvent.on(btn, "click", run)
 
       // Accesibilidad teclado (Enter / Space)
-      btn.addEventListener("keydown", (e: KeyboardEvent) => {
+      keydownHandler = (e: KeyboardEvent) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault()
           e.stopPropagation()
           run()
         }
-      })
+      }
+      btn.addEventListener("keydown", keydownHandler)
 
       return container
     }
@@ -86,22 +89,29 @@ function createControl(): L.Control {
   return new Print()
 }
 
-function ensureControlAdded() {
-  if (!props.map) return
+function ensureControlAdded(map: L.Map | null | undefined) {
+  if (!map) return
   if (control) return
   const ctrl = createControl()
-  ctrl.addTo(props.map)
+  ctrl.addTo(map)
   control = ctrl
 }
 
 function readdWithNewPosition() {
-  if (!props.map) return
-  if (control) {
-    props.map.removeControl(control)
-    control = null
-    buttonEl = null
+  if (!currentMap) return
+  removeControl(currentMap)
+  ensureControlAdded(currentMap)
+}
+
+function removeControl(map: L.Map | null) {
+  if (buttonEl) {
+    if (keydownHandler) buttonEl.removeEventListener("keydown", keydownHandler)
+    L.DomEvent.off(buttonEl, "click", run)
   }
-  ensureControlAdded()
+  if (control && map) map.removeControl(control)
+  control = null
+  buttonEl = null
+  keydownHandler = null
 }
 
 async function run() {
@@ -141,13 +151,26 @@ async function run() {
   }
 }
 
-onMounted(ensureControlAdded)
-watch(() => props.map, ensureControlAdded)
+onMounted(() => ensureControlAdded(props.map))
+watch(
+  () => props.map,
+  (newMap) => {
+    if (currentMap && currentMap !== newMap) {
+      removeControl(currentMap)
+    }
+    if (newMap) {
+      ensureControlAdded(newMap)
+    } else if (currentMap) {
+      removeControl(currentMap)
+    }
+    currentMap = newMap ?? null
+  },
+  { immediate: true }
+)
 watch(() => props.position, readdWithNewPosition)
 
 onBeforeUnmount(() => {
-  if (control && props.map) props.map.removeControl(control)
-  control = null
-  buttonEl = null
+  removeControl(currentMap)
+  currentMap = null
 })
 </script>

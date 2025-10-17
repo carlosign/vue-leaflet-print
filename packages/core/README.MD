@@ -39,7 +39,7 @@ pnpm add vue leaflet @vue-leaflet/vue-leaflet
 <script setup lang="ts">
 import { ref } from 'vue'
 import 'leaflet/dist/leaflet.css'
-import { LMap, LTileLayer, LControl } from '@vue-leaflet/vue-leaflet'
+import { LMap, LTileLayer } from '@vue-leaflet/vue-leaflet'
 import { LPrintControl } from '@carloschar/vue-leaflet-print'
 
 
@@ -80,3 +80,12 @@ const mapaListo = () => {
 ## Eventos
 
 El componente emite: start, success, error(err).
+
+## Pruebas manuales
+
+Para verificar que el control se monta correctamente al cambiar la instancia de mapa:
+
+1. Instala las dependencias y levanta el playground: `pnpm install` seguido de `pnpm --filter playground dev`.
+2. Abre el navegador en la URL indicada por Vite.
+3. Haz clic en **Crear nueva instancia de mapa** para forzar que se destruya y recree el mapa Leaflet.
+4. Comprueba que el botón de impresión vuelve a aparecer en el mapa recién creado y que sigue funcionando.
