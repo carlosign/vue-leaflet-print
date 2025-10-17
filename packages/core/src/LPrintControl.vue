@@ -4,7 +4,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, watch } from "vue"
+import { onMounted, onBeforeUnmount, watch, ref } from "vue"
 import * as L from "leaflet"
 
 const props = withDefaults(defineProps<{
@@ -34,7 +34,10 @@ const props = withDefaults(defineProps<{
 
 const emit = defineEmits<{ (e:"start"):void; (e:"success"):void; (e:"error", err:any):void }>()
 
+const isProcessing = ref(false)
+
 let control: L.Control | null = null
+let buttonEl: HTMLButtonElement | null = null
 
 function createControl(): L.Control {
   const Print = L.Control.extend({
@@ -47,6 +50,11 @@ function createControl(): L.Control {
       btn.title = props.title || "Imprimir / Exportar"
       btn.setAttribute("role", "button")
       btn.setAttribute("tabindex", "0")
+
+      buttonEl = btn
+      if (isProcessing.value) {
+        buttonEl.disabled = true
+      }
 
 
       const aria = props.ariaLabel || props.label || props.title || "Imprimir / Exportar"
@@ -91,11 +99,17 @@ function readdWithNewPosition() {
   if (control) {
     props.map.removeControl(control)
     control = null
+    buttonEl = null
   }
   ensureControlAdded()
 }
 
 async function run() {
+  if (isProcessing.value) return
+
+  isProcessing.value = true
+  if (buttonEl) buttonEl.disabled = true
+
   try {
     emit("start")
     if (props.mode === "print") {
@@ -121,6 +135,9 @@ async function run() {
   } catch (e) {
     emit("error", e as any)
     console.error(e)
+  } finally {
+    isProcessing.value = false
+    if (buttonEl) buttonEl.disabled = false
   }
 }
 
@@ -131,5 +148,6 @@ watch(() => props.position, readdWithNewPosition)
 onBeforeUnmount(() => {
   if (control && props.map) props.map.removeControl(control)
   control = null
+  buttonEl = null
 })
 </script>
